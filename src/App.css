@@ -1,38 +1,165 @@
-.App {
-  text-align: center;
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.title {
+  font-size: 200px;
+  font-family: "filosofia-basic-small-caps", serif;
+  font-style: normal;
+  font-size: 30px;
+  font-weight: 400;
+  border-top: 1px solid #000;
+  position: relative;
+  text-align: left;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 1.7;
+  color: #777;
+  padding: 30px;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+h1 {
+  font-size: 15px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+p {
+  font-size: 10px;
+}
+span {
+  font-size: 10px;
+  display: inline-block;
+  padding: 10px 0 10px 0;
+}
+.foods {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  position: center;
 }
 
-.App-link {
-  color: #61dafb;
+.pouring {
+  height: 1000px;
+  position: center;
+  /* background-size: contain; */
+  /* position: center; */
+  /* position: absolute; */
 }
+.link {
+  padding: 25px;
+  position: relative;
+}
+.wines {
+  max-width: 150px;
+  height: 150px;
+}
+.wineCard {
+  background-color: white;
+  padding: 2%;
+  height: 300px;
+  text-align: center;
+  margin: 10px;
+  margin-bottom: 7%;
+  max-width: 18%;
 
-@keyframes App-logo-spin {
+  /* margin-top: 15px;
+  margin-bottom: 15px; */
+  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+}
+.cards {
+  display: flex;
+  flex-direction: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+  align-items: baseline;
+}
+.searchbar {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+/* Global */
+html {
+  min-height: 100%;
+  /* overflow: hidden; */
+}
+body {
+  height: calc(100vh - 8em);
+  padding: 4em;
+  color: rgba(4, 4, 4, 0.75);
+  font-family: "Anonymous Pro", monospace;
+  /* font-family: "meno-display", serif; */
+  /* background-color: rgb(25, 25, 25); */
+}
+.line-1 {
+  position: relative;
+  top: 50%;
+  width: 30em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 160%;
+  text-align: center;
+  white-space: pre-wrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+.searchbar {
+  position: top right;
+}
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 4s steps(44) 1s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
   from {
-    transform: rotate(0deg);
+    width: 0;
   }
   to {
-    transform: rotate(360deg);
+    width: 24em;
   }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+.line-2 {
+  position: relative;
+  top: 50%;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 160%;
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+  transform: translateY(-50%);
+}
+.anim-typewriter-2 {
+  animation: typewriter 4s steps(44) 6s 1 normal both,
+    blinkTextCursor 500ms steps(44) infinite normal;
+}
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 24em;
+  }
+}
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+.food_pic {
+  max-height: 80px;
 }
