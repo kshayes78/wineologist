@@ -18,6 +18,7 @@ function WineContainer({ wines }) {
     //   foods={wine.foods}
     //   url={wine.url}
     // />
+
     <Modal
       key={wine.id}
       id={wine.id}

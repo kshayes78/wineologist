@@ -40,20 +40,42 @@ export default function SignUp() {
     lastName: "",
     email: "",
   });
+  const [created, setCreated] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
 
-  const handleSubmit = (e) => {
-    // e.preventDefault();
-    // const data = new FormData(event.currentTarget);
-    // console.log({
-    //   email: data.get("email"),
-    //   password: data.get("password"),
+  function createUser(e) {
+    e.preventDefault();
+    e.target.reset();
+
+    // const user = {
+    //   firstName,
+    //   lastName,
+    //   email,
+    //   password
+    // };
     fetch("/users", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify(signupData),
-    });
+    })
+      .then((r) => r.json())
+      .then((response) => {
+        if (response.status === "created") {
+          setCreated(true);
+          setErrorMessage("");
+        }
+      })
+      .catch((response) => setErrorMessage("Please try again"));
+  }
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // const data = new FormData(event.currentTarget);
+    // console.log({
+    //   email: data.get("email"),
+    //   password: data.get("password"),
   };
 
   return (
@@ -89,6 +111,7 @@ export default function SignUp() {
                   fullWidth
                   id="firstName"
                   label="First Name"
+                  onChange={setSignupData}
                   autoFocus
                 />
               </Grid>
@@ -100,6 +123,7 @@ export default function SignUp() {
                   label="Last Name"
                   name="lastName"
                   autoComplete="family-name"
+                  onChange={setSignupData}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -110,6 +134,7 @@ export default function SignUp() {
                   label="Email Address"
                   name="email"
                   autoComplete="email"
+                  onChange={setSignupData}
                 />
               </Grid>
               <Grid item xs={12}>
@@ -121,6 +146,7 @@ export default function SignUp() {
                   type="password"
                   id="password"
                   autoComplete="new-password"
+                  onChange={setSignupData}
                 />
               </Grid>
               <Grid item xs={12}>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Select from "react-select";
 
-function WineForm({ setFood, setWineTypeInput, wines }) {
+function WineForm({ setSuggestedWines }) {
   const [wineType, setWineType] = useState("");
   const [winePrice, setWinePrice] = useState("");
   const [wineFood, setWineFood] = useState("");
@@ -48,10 +48,10 @@ function WineForm({ setFood, setWineTypeInput, wines }) {
   function handleSubmit(e) {
     e.preventDefault();
     fetch(
-      `http://localhost:3000/suggested_wines?price=${winePrice}&wine_type=${wineType}&foods=${wineFood}`
+      `http://localhost:3000/suggested_wines?price=${winePrice}&wine_type=${wineType}&food=${wineFood}`
     )
       .then((res) => res.json())
-      .then(wines);
+      .then((wineArray) => setSuggestedWines(wineArray));
 
     // const submitBody = {price: winePrice, wine_type: wineType, food: wineFood};
     // fetch("http://localhost:3000/suggested_wines", {
@@ -99,7 +99,7 @@ function WineForm({ setFood, setWineTypeInput, wines }) {
           options={foodOptions}
           onChange={handleFoodChange}
         />
-        <input type="submit" value=" Let's See Your Wines!" />
+        <input type="submit" value="Let's See Your Wines!" />
       </form>
     </div>
   );

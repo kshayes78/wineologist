@@ -1,10 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 // import { ElfsightWidget } from "react-elfsight-widget";
 import wine_glasses from "../images/wine_glasses.png";
+import WineContainer from "./WinePage";
 import WineForm from "./WineForm";
-import MyWines from "./MyWines";
 
-function Home({ wines }) {
+function Home() {
+  const [suggestedWines, setSuggestedWines] = useState([]);
+
+  console.log(suggestedWines);
   return (
     <>
       <p className="line-1 anim-typewriter">
@@ -15,11 +18,13 @@ function Home({ wines }) {
         Answer a few short questions to get started.
       </p>
       <WineForm
-      // wines={wines}
-      // setWineTypeInput={setWineTypeInput}
-      // setFoodInput={setFoodInput}
-      // wines={filterByFood}
+        setSuggestedWines={setSuggestedWines}
+        // wines={wines}
+        // setWineTypeInput={setWineTypeInput}
+        // setFoodInput={setFoodInput}
+        // wines={filterByFood}
       />
+      <WineContainer wines={suggestedWines} />
 
       {/* <ElfsightWidget widgetID="8532322e-e769-4123-943d-3621ceb37441" /> */}
       <img src={wine_glasses} className="pouring" alt="pouring wine" />
