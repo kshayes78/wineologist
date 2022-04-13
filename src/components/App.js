@@ -10,23 +10,31 @@ import SignUp from "./SignUp";
 import Search from "./Search";
 // import WineForm from "./WineForm";
 
+//current user
 function App() {
   const [wines, setWines] = useState([]);
-  // const [wineTypeInput, setWineTypeInput] = useState("");
-  // const [foodInput, setFoodInput] = useState("");
+  const [currentUser, setCurrentUser] = useState({});
+  useEffect(() => {
+    fetch("http://localhost:3000/users")
+      .then((r) => r.json())
+      .then(setCurrentUser);
+  }, []);
 
+  //shows all wines
   useEffect(() => {
     fetch("http://localhost:3000/wines")
       .then((r) => r.json())
       .then(setWines);
   }, []);
 
-  // const filterByType = wines.filter((wine) =>
-  //   wine.wine_type.toLowerCase().includes(wineTypeInput.toLowerCase())
-  // );
-  // const filterByFood = filterByType.filter((wine) =>
-  //   wine.foods.toLowerCase().includes(foodInput)
-  // );
+  //set user's favorite wines
+  const [favorites, setFavorites] = useState([]);
+  useEffect(() => {
+    fetch("http://localhost:3000/favorite_wines")
+      .then((res) => res.json())
+      .then(setFavorites);
+  }, []);
+
   const [searchTerm, setSearchTerm] = useState("");
   const newFilteredList = wines.filter((wine) => {
     return (
@@ -43,9 +51,18 @@ function App() {
       <NavBar />
 
       <Routes>
-        <Route exact path="/" element={<Home />} />
-        <Route exact path="/mywines" element={<MyWines />} />
-        <Route path="/wines" element={<WinePage wines={newFilteredList} />} />
+        <Route exact path="/" element={<Home currentUser={currentUser} />} />
+        <Route
+          exact
+          path="/mywines"
+          element={<MyWines favorites={favorites} currentUser={currentUser} />}
+        />
+        <Route
+          path="/wines"
+          element={
+            <WinePage wines={newFilteredList} currentUser={currentUser} />
+          }
+        />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>

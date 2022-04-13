@@ -3,6 +3,9 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
+import Grid from "@mui/material/Grid";
+import WineBarTwoToneIcon from "@mui/icons-material/WineBarTwoTone";
+
 const cardStyle = {
   position: "absolute",
   top: "50%",
@@ -38,10 +41,26 @@ export default function BasicModal({
   abv,
   varietal,
   url,
+  currentUser,
+  id,
+  wine,
 }) {
   const [open, setOpen] = React.useState(false);
+
   const handleOpen = () => setOpen(true);
+  //   const handleOpen = () => console.log(currentUser.id);
   const handleClose = () => setOpen(false);
+  function addToFavorites() {
+    // e.preventDefault();
+    fetch(`http://localhost:3000/favorite_wines`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ User_id: currentUser.id, Wine_id: id }),
+    }).then((res) => res.json());
+    handleClose();
+  }
 
   const foodInfo = foods.map((food) => (
     <div>
@@ -76,6 +95,16 @@ export default function BasicModal({
             Pairs well with:
             <span className="foods">{foodInfo}</span>
           </Typography>
+          <Button
+            startIcon={
+              <WineBarTwoToneIcon hover="none" color="success" sx="large" />
+            }
+            classname="button"
+            onClick={addToFavorites}
+            style={{ color: "crimson" }}
+          >
+            Add to Favorites
+          </Button>
         </Box>
       </Modal>
     </div>

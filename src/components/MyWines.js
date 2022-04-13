@@ -1,10 +1,12 @@
 import React from "react";
-import Login from "./Login";
+// import Login from "./Login";
+import MyWinesContainer from "./MyWinesContainer";
 
-function MyWines() {
+function MyWines({ favorites }) {
   return (
     <div>
-      <Login />
+      {/* <Login /> */}
+      <MyWinesContainer favorites={favorites} />
     </div>
   );
 }

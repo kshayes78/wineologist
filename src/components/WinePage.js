@@ -2,7 +2,7 @@ import React from "react";
 // import WineCard from "./WineCard";
 import Modal from "./Modal";
 
-function WineContainer({ wines }) {
+function WineContainer({ wines, currentUser }) {
   const createWineCards = wines.map((wine) => (
     // <WineCard
     //   key={wine.id}
@@ -32,6 +32,8 @@ function WineContainer({ wines }) {
       image={wine.image}
       foods={wine.foods}
       url={wine.url}
+      wine={wine}
+      currentUser={currentUser}
     />
   ));
   return (
