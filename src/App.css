@@ -27,12 +27,18 @@ h1 {
   font-size: 15px;
 }
 p {
-  font-size: 10px;
+  font-size: 15px;
+}
+a {
+  font-size: 12px;
 }
 span {
   font-size: 10px;
   display: inline-block;
   padding: 10px 0 10px 0;
+}
+.link {
+  font-size: 20px;
 }
 .foods {
   display: flex;
@@ -52,30 +58,42 @@ span {
 }
 
 .wineCard {
-  /* background-color: white;
-  padding: 20px;
-  width: 320px;
-  text-align: center;
   margin: 10px;
-  margin-bottom: 7%;
-  max-width: 18%; */
+  max-width: 30%;
+  justify-content: center;
+  background-color: rgba(255, 255, 255);
+  border-radius: 10px;
+  padding: 40px;
+  transition: transform 0.3s;
+  box-shadow: 10px 10px 5px #c0c0c0;
+}
 
-  /* margin-top: 15px;
-  margin-bottom: 15px; */
-  box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
+.wineCard:hover {
+  transform: translateY(-7px);
 }
-.wines {
-  position: relative;
-  max-width: 200px;
-  height: 200px;
-}
-.cards {
+.wineContainer {
   display: flex;
-  flex-direction: flex;
+  flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: baseline;
 }
+.wines {
+  justify-content: center;
+  max-width: 150px;
+  height: 150px;
+}
+.wines:hover {
+  transform: translateY(-7px);
+}
+.filterSearch {
+  max-width: 30%;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 .searchbar {
   position: absolute;
   top: 0;
@@ -106,9 +124,10 @@ body {
   overflow: hidden;
   transform: translateY(-50%);
 }
-.searchbar {
+
+/* .searchbar {
   position: top right;
-}
+} */
 /* Animation */
 .anim-typewriter {
   animation: typewriter 4s steps(44) 1s 1 normal both,
@@ -164,4 +183,59 @@ body {
 }
 .food_pic {
   max-height: 60px;
+}
+.btn:link,
+.btn:visited {
+  text-transform: uppercase;
+  text-decoration: none;
+  /* padding top & right */
+  padding: 15px 40px;
+  display: inline-block;
+  border-radius: 100px;
+  transition: all 0.2s;
+  position: relative;
+}
+
+.btn:hover {
+  /* Moves button up/down on Y axis. UP is a negative value */
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+/* when a button is clicked, it is "active" */
+.btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0.2);
+}
+
+.btn-white {
+  background-color: #fff;
+  color: #777;
+}
+
+/* pseudoelement is the element behind the element */
+.btn::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+.btn-white::after {
+  background-color: #fff;
+}
+
+.btn:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+.btn-animated {
+  animation: moveInBottom 0.5 ease-out 0.75s;
+  animation-fill-mode: backwards;
 }

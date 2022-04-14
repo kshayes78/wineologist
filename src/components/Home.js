@@ -7,7 +7,7 @@ import WineForm from "./WineForm";
 function Home() {
   const [suggestedWines, setSuggestedWines] = useState([]);
 
-  console.log(suggestedWines);
+  // console.log(suggestedWines);
   return (
     <>
       <p className="line-1 anim-typewriter">

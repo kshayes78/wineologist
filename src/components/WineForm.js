@@ -5,7 +5,6 @@ function WineForm({ setSuggestedWines }) {
   const [wineType, setWineType] = useState("");
   const [winePrice, setWinePrice] = useState("");
   const [wineFood, setWineFood] = useState("");
-  //   const [formData, setFormData] = useState("");
 
   //   // create a function that handle the React-select event and
   //   // save the value of that event on an state every time the component change
@@ -36,13 +35,22 @@ function WineForm({ setSuggestedWines }) {
   //   //   ];
 
   const foodOptions = [
-    { value: "", label: "All" },
+    { value: "Appetizer", label: "Appetizer" },
     { value: "Beef", label: "Beef" },
-    { value: "Venison", label: "Venison" },
+    { value: "Cheese", label: "Cheese" },
+    { value: "Cured Meat", label: "Cured Meat" },
+    { value: "Dessert", label: "Dessert" },
+    { value: "Lamb", label: "Lamb" },
+    { value: "Pasta", label: "Pasta" },
     { value: "Pork", label: "Pork" },
     { value: "Poultry", label: "Poultry" },
     { value: "Seafood", label: "Seafood" },
+    { value: "Shellfish", label: "Shellfish" },
+    { value: "Spicy", label: "Spicy" },
+    { value: "Veal", label: "Veal" },
     { value: "Vegetarian", label: "Vegetarian" },
+    { value: "Venison", label: "Venison" },
+    { value: "Pasta", label: "Pasta" },
   ];
 
   function handleSubmit(e) {
@@ -85,7 +93,7 @@ function WineForm({ setSuggestedWines }) {
           options={priceOptions}
           onChange={handlePriceChange}
         />
-        <label>Select a wine type</label>
+        <label>Select a Wine Type</label>
         <Select
           className="dropdown"
           placeholder="Wine Type"
@@ -99,7 +107,11 @@ function WineForm({ setSuggestedWines }) {
           options={foodOptions}
           onChange={handleFoodChange}
         />
-        <input type="submit" value="Let's See Your Wines!" />
+        <input
+          type="submit"
+          className="btn btn-white btn-animated"
+          value="Let's See Your Wines!"
+        />
       </form>
     </div>
   );

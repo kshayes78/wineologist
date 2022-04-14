@@ -25,6 +25,7 @@ function WineContainer({ wines, currentUser }) {
       name={wine.name}
       description={wine.description}
       price={wine.price}
+      wine_type={wine.wine_type}
       varietal={wine.varietal}
       abv={wine.abv}
       taste={wine.taste}
@@ -37,7 +38,7 @@ function WineContainer({ wines, currentUser }) {
     />
   ));
   return (
-    <div className="cards">
+    <div className="wineContainer">
       {/* <h3>Wine Page</h3> */}
       {createWineCards}
     </div>

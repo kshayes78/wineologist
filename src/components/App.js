@@ -34,6 +34,9 @@ function App() {
       .then((res) => res.json())
       .then(setFavorites);
   }, []);
+  // function likeWine(wine) {
+  //   setFavorites([...favorites, wine]);
+  // }
 
   const [searchTerm, setSearchTerm] = useState("");
   const newFilteredList = wines.filter((wine) => {
