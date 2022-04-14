@@ -1,8 +1,9 @@
 import React from "react";
 // import WineCard from "./WineCard";
 import Modal from "./Modal";
+import Search from "./Search";
 
-function WineContainer({ wines, currentUser }) {
+function WineContainer({ wines, currentUser, searchTerm, setSearchTerm }) {
   const createWineCards = wines.map((wine) => (
     // <WineCard
     //   key={wine.id}
@@ -39,7 +40,7 @@ function WineContainer({ wines, currentUser }) {
   ));
   return (
     <div className="wineContainer">
-      {/* <h3>Wine Page</h3> */}
+      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
       {createWineCards}
     </div>
   );

@@ -11,12 +11,13 @@
   font-size: 30px;
   font-weight: 400;
   border-top: 1px solid #000;
-  position: relative;
+  border-bottom: 1px solid #000;
+  position: top;
   text-align: left;
 }
 
 body {
-  font-family: "Lato", sans-serif;
+  font-family: "filosofia-basic-small-caps", serif;
   font-weight: 400;
   font-size: 16px;
   line-height: 1.7;
@@ -25,9 +26,12 @@ body {
 }
 h1 {
   font-size: 15px;
+  font-family: "filosofia-basic-small-caps", serif;
+  color: black;
 }
 p {
   font-size: 15px;
+  color: black;
 }
 a {
   font-size: 12px;
@@ -64,13 +68,17 @@ span {
   background-color: rgba(255, 255, 255);
   border-radius: 10px;
   padding: 40px;
-  transition: transform 0.3s;
+  /* transition: transform 0.3s; */
+  transition-property: all;
+  transition-duration: 0.25s;
+  transition-timing-function: ease-in-out;
+  transition-delay: 0s;
   box-shadow: 10px 10px 5px #c0c0c0;
 }
 
-.wineCard:hover {
+/* .wineCard:hover {
   transform: translateY(-7px);
-}
+} */
 .wineContainer {
   display: flex;
   flex-direction: row;
@@ -85,6 +93,7 @@ span {
 }
 .wines:hover {
   transform: translateY(-7px);
+  transition-timing-function: ease-in-out;
 }
 .filterSearch {
   max-width: 30%;
@@ -96,6 +105,11 @@ span {
 
 .searchbar {
   position: absolute;
+  display: inline-block;
+  text-align: start;
+  vertical-align: baseline;
+  width: 30%;
+  color: -internal-light-dark(black, white);
   top: 0;
   right: 0;
 }
@@ -184,14 +198,18 @@ body {
 .food_pic {
   max-height: 60px;
 }
+.btn {
+  border-radius: 3px;
+  text-transform: uppercase;
+  padding: 10px 40px;
+}
 .btn:link,
 .btn:visited {
-  text-transform: uppercase;
   text-decoration: none;
   /* padding top & right */
-  padding: 15px 40px;
+
   display: inline-block;
-  border-radius: 100px;
+  visibility: hidden;
   transition: all 0.2s;
   position: relative;
 }

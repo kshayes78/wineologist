@@ -73,10 +73,8 @@ export default function BasicModal({
     <div className="wineCard">
       <Button onClick={handleOpen}>
         <h1>{name}</h1>
-
-        <p>abv:{abv}</p>
-
         <p>${price}</p>
+        <p>abv:{abv}</p>
         <p>Type: {wine_type}</p>
         <img src={image} alt={name} className="wines" />
       </Button>
