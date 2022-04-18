@@ -14,6 +14,7 @@ import SignUp from "./SignUp";
 function App() {
   const [wines, setWines] = useState([]);
   const [currentUser, setCurrentUser] = useState({});
+
   useEffect(() => {
     fetch("http://localhost:3000/users")
       .then((r) => r.json())
@@ -26,17 +27,6 @@ function App() {
       .then((r) => r.json())
       .then(setWines);
   }, []);
-
-  //set user's favorite wines
-  const [favorites, setFavorites] = useState([]);
-  useEffect(() => {
-    fetch("http://localhost:3000/favorite_wines")
-      .then((res) => res.json())
-      .then(setFavorites);
-  }, []);
-  // function likeWine(wine) {
-  //   setFavorites([...favorites, wine]);
-  // }
 
   const [searchTerm, setSearchTerm] = useState("");
   const newFilteredList = wines.filter((wine) => {
@@ -58,7 +48,7 @@ function App() {
         <Route
           exact
           path="/mywines"
-          element={<MyWines favorites={favorites} currentUser={currentUser} />}
+          element={<MyWines currentUser={currentUser} />}
         />
         <Route
           path="/wines"
@@ -71,6 +61,7 @@ function App() {
             />
           }
         />
+
         <Route path="/signup" element={<SignUp />} />
       </Routes>
     </div>

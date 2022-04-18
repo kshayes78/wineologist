@@ -3,7 +3,8 @@ import Box from "@mui/material/Box";
 import Button from "@mui/material/Button";
 import Typography from "@mui/material/Typography";
 import Modal from "@mui/material/Modal";
-import Grid from "@mui/material/Grid";
+// import Grid from "@mui/material/Grid";
+import StarRating from "./StarRating";
 import WineBarTwoToneIcon from "@mui/icons-material/WineBarTwoTone";
 
 // const cardStyle = {
@@ -62,7 +63,7 @@ export default function BasicModal({
 
   const foodInfo = foods.map((food) => (
     <div>
-      <a href={food.url} target="_blank">
+      <a href={food.url} target="_blank" rel="noreferrer">
         <img src={food.image} className="food_pic" alt="food pic" />
       </a>
       <p>{food.name}</p>
@@ -71,13 +72,27 @@ export default function BasicModal({
 
   return (
     <div className="wineCard">
-      <Button onClick={handleOpen}>
-        <h1>{name}</h1>
-        <p>${price}</p>
-        <p>abv:{abv}</p>
-        <p>Type: {wine_type}</p>
-        <img src={image} alt={name} className="wines" />
-      </Button>
+      <button onClick={handleOpen}>
+        <span className="blurb">
+          <h1>{name}</h1>
+          <br />
+          <span>
+            <p>
+              <strong>${price}</strong>
+            </p>
+            <p>abv {abv}</p>
+          </span>
+          <br />
+          <span>
+            <strong>
+              Type
+              <br /> {wine_type}
+            </strong>
+          </span>
+
+          <img src={image} alt={name} className="wines" />
+        </span>
+      </button>
       <Modal
         open={open}
         onClose={handleClose}
@@ -88,7 +103,7 @@ export default function BasicModal({
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <p>{description}</p>
             <p>Varietal: {varietal}</p>
-            <a href={url} target="_blank">
+            <a href={url} target="_blank" rel="noreferrer">
               Where to Buy
             </a>
           </Typography>

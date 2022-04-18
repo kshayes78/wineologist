@@ -1,9 +1,16 @@
 import React from "react";
 import Grid from "@mui/material/Grid";
 
-function MyWineCard({ favorite, image, description, currentUser }) {
+function MyWineCard({ favorite, currentUser, deleteWine }) {
   //   console.log(favorite);
-  console.log(favorite);
+
+  function handleDelete() {
+    fetch(`http://localhost:3000/favorite_wines/${favorite.id}`, {
+      method: "DELETE",
+    });
+    deleteWine(favorite.id);
+    console.log(favorite.id);
+  }
 
   return (
     <Grid item xs={3}>
@@ -13,6 +20,9 @@ function MyWineCard({ favorite, image, description, currentUser }) {
         alt="wine-pic"
       />
       <p>{favorite.Wine.description}</p>
+      <button className="delete" onClick={handleDelete}>
+        Delete
+      </button>
     </Grid>
   );
 }

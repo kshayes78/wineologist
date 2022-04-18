@@ -22,7 +22,9 @@ body {
   font-size: 16px;
   line-height: 1.7;
   color: #777;
-  padding: 30px;
+  /* padding: 30px; */
+  background-image: url("https://images.unsplash.com/photo-1615800098779-1be32e60cca3?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3247&q=80");
+  /* background-size: cover; */
 }
 h1 {
   font-size: 15px;
@@ -32,14 +34,17 @@ h1 {
 p {
   font-size: 15px;
   color: black;
+  font-family: "Anonymous Pro", monospace;
+  font-style: normal;
 }
 a {
   font-size: 12px;
 }
 span {
   font-size: 10px;
+  color: black;
   display: inline-block;
-  padding: 10px 0 10px 0;
+  padding: 10px 0 10px 10px;
 }
 .link {
   font-size: 20px;
@@ -51,8 +56,9 @@ span {
 
 .pouring {
   height: 1000px;
-  position: center;
-  /* background-size: contain; */
+  position: absolute;
+  top: 20%;
+  z-index: -1;
   /* position: center; */
   /* position: absolute; */
 }
@@ -63,55 +69,91 @@ span {
 
 .wineCard {
   margin: 10px;
-  max-width: 30%;
+  max-width: 20%;
+  height: 415px;
+  position: relative;
+  display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255);
   border-radius: 10px;
   padding: 40px;
   /* transition: transform 0.3s; */
+  flex-direction: column;
   transition-property: all;
   transition-duration: 0.25s;
   transition-timing-function: ease-in-out;
   transition-delay: 0s;
   box-shadow: 10px 10px 5px #c0c0c0;
 }
+.wineCard button {
+  background: transparent;
+  border: none;
+}
 
-/* .wineCard:hover {
+.wineCard:hover {
   transform: translateY(-7px);
-} */
+}
 .wineContainer {
   display: flex;
+  width: 100%;
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: center;
-  align-items: baseline;
+  align-items: center;
 }
 .wines {
   justify-content: center;
+  /* position: absolute; */
   max-width: 150px;
   height: 150px;
+  left: 4vw;
+}
+.wine-description {
+  max-height: 500px;
 }
 .wines:hover {
-  transform: translateY(-7px);
-  transition-timing-function: ease-in-out;
+  transform: scale(2.02);
+  /* transform: translateY(-7px);
+  transition-timing-function: ease-in-out; */
 }
-.filterSearch {
-  max-width: 30%;
-  position: fixed;
+/* .filterSearch {
+
+  display: flex;
+  flex-direction: column;
+
   top: 50%;
   left: 50%;
+  max-width: 30em;
+  text-align: center;
+  margin: auto;
   transform: translate(-50%, -50%);
+  background-color: rgba(137, 1, 1, 0.059);
+} */
+.filterSearch {
+  width: 20vw;
+  margin: auto;
 }
+.home {
+  display: flex;
+  flex-direction: column;
+  margin-top: 5vh;
+  /* overflow: scroll; */
+}
+/* .type {
+  
+} */
 
 .searchbar {
   position: absolute;
-  display: inline-block;
+  top: 8%;
+  right: 0;
+  display: inline;
   text-align: start;
   vertical-align: baseline;
-  width: 30%;
+  width: 30em;
   color: -internal-light-dark(black, white);
-  top: 0;
-  right: 0;
+  /* top: 0;
+  right: 0; */
 }
 /* Global */
 html {
@@ -127,7 +169,7 @@ body {
   /* background-color: rgb(25, 25, 25); */
 }
 .line-1 {
-  position: relative;
+  /* position: relative; */
   top: 50%;
   width: 30em;
   margin: 0 auto;
@@ -139,9 +181,6 @@ body {
   transform: translateY(-50%);
 }
 
-/* .searchbar {
-  position: top right;
-} */
 /* Animation */
 .anim-typewriter {
   animation: typewriter 4s steps(44) 1s 1 normal both,
@@ -164,7 +203,7 @@ body {
   }
 }
 .line-2 {
-  position: relative;
+  /* position: relative; */
   top: 50%;
   width: 24em;
   margin: 0 auto;
@@ -256,4 +295,9 @@ body {
 .btn-animated {
   animation: moveInBottom 0.5 ease-out 0.75s;
   animation-fill-mode: backwards;
+}
+.wine-calc {
+  max-width: 30em;
+  text-align: center;
+  margin: auto;
 }

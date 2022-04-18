@@ -2,19 +2,18 @@ import React from "react";
 import MyWineCard from "./MyWineCard";
 import Grid from "@mui/material/Grid";
 
-function MyWinesContainer({ favorites, currentUser }) {
+function MyWinesContainer({ favorites, currentUser, deleteWine }) {
   const createMyWineCards = favorites.map((favorite) => (
     <MyWineCard
-      key={favorite.user_id}
+      key={favorite.id}
       favorite={favorite}
-      image={favorite.image}
-      description={favorite.description}
       currentUser={currentUser}
+      deleteWine={deleteWine}
     />
   ));
   return (
     <div>
-      <Grid container spacing={5}>
+      <Grid container justifyContent="center" spacing={5}>
         {createMyWineCards}
       </Grid>
     </div>

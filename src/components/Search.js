@@ -7,13 +7,15 @@ function Search({ searchTerm, setSearchTerm }) {
 
   return (
     <form className="searchbar" onSubmit={handleSubmit}>
-      {/* <label htmlFor="search">Search all Wines</label> */}
+      <label htmlFor="search">
+        <strong>Search all Wines</strong>
+      </label>
       <input
         type="text"
         id="search"
         autocomplete="on"
         autocorrect="off"
-        placeholder="Search by name or keyword 🔍"
+        placeholder="name or keyword 🔍"
         value={searchTerm}
         onChange={(e) => setSearchTerm(e.target.value)}
       />
