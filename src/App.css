@@ -137,8 +137,9 @@ span {
   background-color: rgba(137, 1, 1, 0.059);
 } */
 .filterSearch {
-  width: 20vw;
+  width: 12vw;
   margin: auto;
+  text-align: center;
 }
 .home {
   display: flex;
@@ -235,7 +236,7 @@ body {
 }
 @keyframes blinkTextCursor {
   from {
-    border-right-color: rgba(255, 255, 255, 0.75);
+    border-right-color: rgba(0, 0, 0, 0.332);
   }
   to {
     border-right-color: transparent;

@@ -7,7 +7,7 @@ import NavBar from "./NavBar";
 import MyWines from "./MyWines";
 import WinePage from "./WinePage";
 import SignUp from "./SignUp";
-// import Search from "./Search";
+import Search from "./Search";
 // import WineForm from "./WineForm";
 
 //current user
@@ -41,7 +41,7 @@ function App() {
     <div>
       <Header />
       {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
-      <NavBar />
+      <NavBar searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
 
       <Routes>
         <Route exact path="/" element={<Home currentUser={currentUser} />} />

@@ -38,9 +38,10 @@ function WineContainer({ wines, currentUser, searchTerm, setSearchTerm }) {
       currentUser={currentUser}
     />
   ));
+
   return (
     <>
-      <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} />
+      {/* <Search searchTerm={searchTerm} setSearchTerm={setSearchTerm} /> */}
       <div className="wineContainer">{createWineCards}</div>
     </>
   );

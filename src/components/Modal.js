@@ -7,17 +7,6 @@ import Modal from "@mui/material/Modal";
 import StarRating from "./StarRating";
 import WineBarTwoToneIcon from "@mui/icons-material/WineBarTwoTone";
 
-// const cardStyle = {
-//   marginTop: 8,
-//   display: "flex",
-//   flexDirection: "column",
-//   alignItems: "center",
-//   backgroundColor: "rgba(255, 255, 255)",
-//   padding: "40px",
-//   borderRadius: "20px",
-//   boxShadow: "0 10px 10px rgba(0, 0, 0, 0.2)",
-// };
-
 const style = {
   position: "absolute",
   top: "50%",
