@@ -9,7 +9,7 @@ function MyWineCard({ favorite, currentUser, deleteWine }) {
       method: "DELETE",
     });
     deleteWine(favorite.id);
-    console.log(favorite.id);
+    alert(`Successfully deleted ${favorite.Wine.name} from your collection!`);
   }
 
   return (

@@ -59,6 +59,7 @@ export default function BasicModal({
       body: JSON.stringify({ User_id: currentUser.id, Wine_id: id }),
     }).then((res) => res.json());
     handleClose();
+    alert(`Added ${name} to My Wines`);
   }
 
   const foodInfo = foods.map((food) => (
@@ -80,7 +81,6 @@ export default function BasicModal({
             <p>
               <strong>${price}</strong>
             </p>
-            <p>abv {abv}</p>
           </span>
           <br />
           <span>
@@ -103,6 +103,7 @@ export default function BasicModal({
           <Typography id="modal-modal-title" variant="h6" component="h2">
             <p>{description}</p>
             <p>Varietal: {varietal}</p>
+            <p>abv {abv}</p>
             <a href={url} target="_blank" rel="noreferrer">
               Where to Buy
             </a>

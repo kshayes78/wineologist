@@ -4,6 +4,7 @@ import wine_glasses from "../images/wine_glasses.png";
 // import WineContainer from "./WinePage";
 import WineForm from "./WineForm";
 // import { Routes, Route } from "react-router-dom";
+import AgeVerify from "./AgeVerify";
 
 function Home() {
   // const [suggestedWines, setSuggestedWines] = useState([]);
@@ -11,6 +12,7 @@ function Home() {
   // console.log(suggestedWines);
   return (
     <div className="home">
+      <AgeVerify />
       <div className="type">
         <p className="line-1 anim-typewriter">
           Life is complicated. Wine doesn't have to be.

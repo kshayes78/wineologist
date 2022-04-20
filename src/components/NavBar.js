@@ -5,26 +5,27 @@ import MuiLink from "@mui/material/Link";
 function NavBar() {
   return (
     <header className="header">
-      <Link to="/">
-        <MuiLink className="link" underline="hover" color="crimson" href="/">
-          {/* <MuiLink className="link" underline="hover" color="crimson"> */}
+      <Link to="/" className="link">
+        {/* <MuiLink className="link" underline="hover" color="crimson" href="/">
+         
           Home
-        </MuiLink>
+        </MuiLink> */}
+        Home
       </Link>
 
-      <Link to="/wines">
-        <MuiLink
+      <Link to="/wines" className="link">
+        Wines
+        {/* <MuiLink
           className="link"
-          underline="hover"
+          underline="none"
           color="crimson"
-          href="/wines"
+          // href="/wines"
         >
-          {/* <MuiLink className="link" underline="hover" color="crimson"> */}
           Wines
-        </MuiLink>
+        </MuiLink> */}
       </Link>
 
-      <Link to="/mywines">
+      <Link to="/mywines" className="link">
         {/* <MuiLink
           className="link"
           underline="hover"
@@ -33,20 +34,22 @@ function NavBar() {
         >
           My Wines
         </MuiLink> */}
-        <MuiLink className="link" underline="hover" color="crimson">
+        {/* <MuiLink className="link" underline="hover" color="crimson">
           My Wines
-        </MuiLink>
+        </MuiLink> */}
+        My Wines
       </Link>
 
-      <Link to="/signup">
-        <MuiLink
+      <Link to="/signup" className="link">
+        {/* <MuiLink
           className="link"
           underline="hover"
           color="crimson"
           href="signup"
         >
-          Sign Up
-        </MuiLink>
+          Sign Out
+        </MuiLink> */}
+        Sign Out
         {/* <MuiLink className="link" underline="hover" color="crimson">
           Sign Up
         </MuiLink> */}

@@ -44,11 +44,22 @@ span {
   font-size: 10px;
   color: black;
   display: inline-block;
-  padding: 10px 0 10px 10px;
+  padding: 10px 10px 10px 10px;
 }
 .link {
   font-size: 20px;
+  padding: 25px;
+  position: relative;
+  color: crimson;
 }
+
+.link:hover {
+  color: rgb(58, 4, 6);
+  transform: scale(1.5);
+}
+/* .link:visited {
+  color: rgb(58, 4, 6);
+} */
 .foods {
   display: flex;
   position: center;
@@ -62,22 +73,17 @@ span {
   /* position: center; */
   /* position: absolute; */
 }
-.link {
-  padding: 25px;
-  position: relative;
-}
 
 .wineCard {
   margin: 10px;
-  max-width: 20%;
+  max-width: 15%;
   height: 415px;
   position: relative;
   display: flex;
   justify-content: center;
   background-color: rgba(255, 255, 255);
   border-radius: 10px;
-  padding: 40px;
-  /* transition: transform 0.3s; */
+  padding: 30px;
   flex-direction: column;
   transition-property: all;
   transition-duration: 0.25s;
@@ -85,6 +91,7 @@ span {
   transition-delay: 0s;
   box-shadow: 10px 10px 5px #c0c0c0;
 }
+
 .wineCard button {
   background: transparent;
   border: none;
@@ -301,3 +308,106 @@ body {
   text-align: center;
   margin: auto;
 }
+#age-verify {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(#000, 0.6);
+  transition: transition 0.5s;
+}
+.delete {
+  border-radius: 3px;
+  text-transform: uppercase;
+  padding: 10px 40px;
+}
+.delete:link,
+.delete:visited {
+  text-decoration: none;
+  /* padding top & right */
+
+  display: inline-block;
+  visibility: hidden;
+  transition: all 0.2s;
+  position: relative;
+}
+.delete:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+.delete:active {
+  transform: translateY(-1px);
+  box-shadow: 0 5px 10px rgba(0, 0, 0.2);
+}
+.delete::after {
+  content: "";
+  display: inline-block;
+  height: 100%;
+  width: 100%;
+  border-radius: 100px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+.delete:hover::after {
+  transform: scaleX(1.4) scaleY(1.6);
+  opacity: 0;
+}
+
+/* .window {
+  position: absolute;
+  top: 50%;
+  width: window-width;
+  height: window-height;
+  overflow: hidden;
+  padding: 40px;
+  margin-left: -(window-width/2);
+  margin-top: -(window-height/2);
+  background-color: #fff;
+  border: 6px solid button-color;
+  box-sizing: border-box;
+  transition: transition;
+}
+.age-text {
+  display: block;
+  text-align: center;
+  margin-bottom: 10px;
+  font-family: "Anonymous Pro", monospace;
+}
+.age-text .title {
+  color: button-color;
+  font-size: 24px;
+}
+button {
+  border: 0;
+  margin: 0;
+  padding: 0;
+  width: 48%;
+  height: 60px;
+  color: #fff;
+  font-size: 18px;
+  background-color: button-color;
+  margin-top: 20px;
+}
+.back {
+  display: block;
+  float: none;
+  margin: auto;
+  background-color: #fff;
+  color: button-color !important;
+  margin-top: 20px;
+}
+.yes {
+  float: left;
+}
+.no {
+  float: right;
+}
+button .hover {
+  transform: scale(1.1);
+  box-shadow: 0 20px 60px rgba(#000, 0.2);
+  background-color: lighten(button-color, 10%);
+} */
