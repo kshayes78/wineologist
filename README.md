@@ -1,3 +1,18 @@
+##Demonstrated Skills
+Create React App
+Wire framing (see hierarchy.drawio)
+JSX and fragments
+React functional components - named and default imports/exports
+React hooks (useEffect and useState)
+React Router DOM, BrowserRouter, Switch, Route, NavLink
+Controlled inputs - form and dynamic search bar
+CRUD and fetch requests to REST API
+Conditional rendering
+Array iteration
+Passing Props, call back functions, and inverse dataflow
+React MUI Components
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
