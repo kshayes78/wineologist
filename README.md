@@ -1,4 +1,4 @@
-##Demonstrated Skills
+# Demonstrated Skills
 Create React App
 Wire framing (see hierarchy.drawio)
 JSX and fragments
